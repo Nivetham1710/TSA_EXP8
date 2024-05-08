@@ -1,4 +1,4 @@
-# Ex.No: 08     MOVINTG AVERAGE MODEL AND EXPONENTIAL SMOOTHING
+# Ex.No: 08     MOVING AVERAGE MODEL AND EXPONENTIAL SMOOTHING
 ### AIM:
 To implement Moving Average Model and Exponential smoothing Using Python.
 ### ALGORITHM:
@@ -66,52 +66,9 @@ plt.ylabel('International Passengers')
 plt.legend()
 plt.show()
 ```
-#### Fit an AutoRegressive (AR) model with 13 lags
-```
-lag_order = 13
-model = AutoReg(data['International '], lags=lag_order)
-model_fit = model.fit()
-```
-#### Plot Partial Autocorrelation Function (PACF) and Autocorrelation Function (ACF)
-```
-plot_acf(data['International '])
-plt.title('Autocorrelation Function (ACF)')
-plt.show()
-
-plot_pacf(data['International '])
-plt.title('Partial Autocorrelation Function (PACF)')
-plt.show()
-```
-#### Make predictions using the AR model
-```
-predictions = model_fit.predict(start=lag_order, end=len(data)-1)
-```
-#### Compare the predictions with the original data
-```
-mse = mean_squared_error(data['International '][lag_order:], predictions)
-print('Mean Squared Error (MSE):', mse)
-```
-#### Plot the original data and predictions
-```
-plt.plot(data['International '][lag_order:], label='Original Data')
-plt.plot(predictions, label='Predictions')
-plt.title('AR Model Predictions vs Original Data')
-plt.xlabel('Index')
-plt.ylabel('International Passengers')
-plt.legend()
-plt.show()
-```
 ### OUTPUT:
 #### Plot the original data and fitted value
-![image](https://github.com/Nivetham1710/TSA_EXP8/assets/94155183/d19bdc91-fadb-4a05-843c-92d2356e77d0)
-
-#### Plot Partial Autocorrelation Function (PACF) and Autocorrelation Function (ACF)
-![image](https://github.com/Nivetham1710/TSA_EXP8/assets/94155183/63e2a37a-b7ab-4b36-91ff-cd3e7c4b50d2)
-![image](https://github.com/Nivetham1710/TSA_EXP8/assets/94155183/1b46da48-7cfe-4642-8bc9-f21119fe20c1)
-
-#### Plot the original data and predictions
-![image](https://github.com/Nivetham1710/TSA_EXP8/assets/94155183/29a0533b-a6a5-48f9-8c70-c8bd2c5a43b9)
-
+![image](https://github.com/Nivetham1710/TSA_EXP8/assets/94155183/744c7047-9fa7-46b9-9942-bdc6f047ad9d)
 
 ### RESULT:
 Thus we have successfully implemented the Moving Average Model and Exponential smoothing using python.
